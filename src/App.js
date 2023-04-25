@@ -12,15 +12,25 @@ const App = () => {
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleResult = (result) => {
+    setResult(result);
+  };
+  const handleMessage = (message) => {
+    setMessage(message);
+  };
+  const handleLoading = (isLoading) => {
+    setIsLoading(isLoading);
+  };
+
   return (
     <>
       <main className="container">
         <Header />
         <section className="converter">
           <Form
-            setResult={setResult}
-            setMessage={setMessage}
-            setIsLoading={setIsLoading}
+            setResult={handleResult}
+            setMessage={handleMessage}
+            setIsLoading={handleLoading}
           />
           {isLoading ? (
             <Loader />
